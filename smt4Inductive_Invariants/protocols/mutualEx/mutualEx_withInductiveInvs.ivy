@@ -1,0 +1,76 @@
+#lang ivy1.7
+
+type state_t = {i_em, t_em, c_em, e_em}
+
+type node_t = 1..NODENUMS
+
+individual x_v : bool
+
+after init{
+  n_v(I) := i_em;
+    x_v := true;
+  }
+
+
+action try = {
+    local i_lv : node_t
+     {
+        assume n_v(i_lv) = i_em;
+          n_v(i_lv) := t_em;
+          
+    }
+}
+
+action crit = {
+    local i_lv : node_t
+     {
+        assume n_v(i_lv) = t_em & x_v = true;
+          n_v(i_lv) := c_em;
+          
+          x_v := false;
+          
+    }
+}
+
+action exit = {
+    local i_lv : node_t
+     {
+        assume n_v(i_lv) = c_em;
+          n_v(i_lv) := e_em;
+          
+    }
+}
+
+action idle = {
+    local i_lv : node_t
+     {
+        assume n_v(i_lv) = e_em;
+          n_v(i_lv) := i_em;
+          
+          x_v := true;
+          
+    }
+}
+
+conjecture   I ~= J -> (  n_v(I) = c_em ->   n_v(J) ~= c_em)
+
+
+
+conjecture  !(n_v(j) = c_em & x_v = true)
+
+
+conjecture   !(n_v(j) = c_em & n_v(i) = e_em)
+
+
+
+conjecture  !(n_v(i) = e_em & x_v = true)
+
+
+conjecture   !(n_v(i) = e_em & n_v(j) = e_em)
+
+
+
+export try
+export crit
+export exit
+export idle

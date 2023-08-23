@@ -1,0 +1,29 @@
+WithoutRule2_node2
+times of calling SMT:64
+times of calling LocalSearch:36
+
+
+WithRule2_node2
+times of calling SMT:56
+times of calling LocalSearch:36
+
+------------------------------------------
+
+WithoutRule2_node3
+times of calling SMT: 216
+times of calling LocalSearch: 77
+
+WithRule2_node3
+times of calling SMT: 144
+times of calling LocalSearch: 77
+
+
+------------------------------------------对称规约+rule2
+node2:
+times of calling SMT: 36
+times of calling LocalSearch: 32
+
+node3:
+times of calling SMT: 40
+times of calling LocalSearch: 40
+

@@ -1,0 +1,155 @@
+invariant "coherence_Crit1"
+  !(n[2].st = C & x = true)
+invariant "c51_Crit1"
+  !(memDATA != auxDATA & x = true)
+invariant "c51_Store1"
+  !(n[2].st = C & n[1].st = C)
+invariant "coherence_Crit1_1_Idle1"
+  !(n[2].st = C & n[1].st = E)
+invariant "c51_Crit1_1_Idle1"
+  !(n[1].data != auxDATA & n[1].st = E)
+invariant "coherence_Crit1_1_Idle1_1_Crit2"
+  !(n[1].st = E & x = true)
+invariant "coherence_Crit1_1_Idle1_1_Crit2_1_Idle2"
+  !(n[1].st = E & n[2].st = E)
+  
+  
+
+
+
+invariant "coherence_Crit1"
+  !(n[2].st = C & x = true)
+invariant "c51_Crit1"
+  !(memDATA != auxDATA & x = true)
+invariant "c51_Store1"
+  !(n[2].st = C & n[1].st = C)
+invariant "coherence_Crit1_1_Idle1"
+  !(n[2].st = C & n[1].st = E)
+invariant "c51_Crit1_1_Idle1"
+  !(n[1].data != auxDATA & n[1].st = E)
+invariant "coherence_Crit1_1_Idle1_1_Crit2"
+  !(n[1].st = E & x = true)
+invariant "coherence_Crit1_1_Idle1_1_Crit2_1_Idle2"
+  !(n[1].st = E & n[2].st = E)
+
+
+invariant "coherence_Crit1"
+  !(n[2].st = C & x = true)
+invariant "c51_Crit1"
+  !(memDATA != auxDATA & x = true)
+invariant "c51_Store1"
+  !(n[2].st = C & n[1].st = C)
+invariant "coherence_Crit1_1_Idle1"
+  !(n[2].st = C & n[1].st = E)
+invariant "c51_Crit1_1_Idle1"
+  !(n[1].data != auxDATA & n[1].st = E)
+invariant "coherence_Crit1_1_Idle1_1_Crit2"
+  !(n[1].st = E & x = true)
+invariant "coherence_Crit1_1_Idle1_1_Crit2_1_Idle2"
+  !(n[1].st = E & n[2].st = E)
+
+invariant "coherence_Crit1"
+  !(n[2].st = C & x = true)
+invariant "c51_Crit1"
+  !(memDATA != auxDATA & x = true)
+invariant "c51_Store1"
+  !(n[2].st = C & n[1].st = C)
+invariant "coherence_Crit1_1_Idle1"
+  !(n[2].st = C & n[1].st = E)
+invariant "c51_Crit1_1_Idle1"
+  !(n[1].data != auxDATA & n[1].st = E)
+invariant "coherence_Crit1_1_Idle1_1_Crit2"
+  !(n[1].st = E & x = true)
+invariant "coherence_Crit1_1_Idle1_1_Crit2_1_Idle2"
+  !(n[1].st = E & n[2].st = E)
+  
+invariant "coherence_Crit1"
+  !(n[2].st = C & x = true)
+invariant "c51_Crit1"
+  !(memDATA != auxDATA & x = true)
+invariant "c51_Store1"
+  !(n[2].st = C & n[1].st = C)
+invariant "coherence_Crit1_1_Idle1"
+  !(n[2].st = C & n[1].st = E)
+invariant "c51_Crit1_1_Idle1"
+  !(n[1].data != auxDATA & n[1].st = E)
+invariant "coherence_Crit1_1_Idle1_1_Crit2"
+  !(n[1].st = E & x = true)
+invariant "coherence_Crit1_1_Idle1_1_Crit2_1_Idle2"
+  !(n[1].st = E & n[2].st = E)
+
+invariant "coherence_Crit1"
+  !(n[2].st = C & x = true)
+invariant "c51_Crit1"
+  !(memDATA != auxDATA & x = true)
+invariant "c51_Store1"
+  !(n[2].st = C & n[1].st = C)
+invariant "coherence_Crit1_1_Idle1"
+  !(n[2].st = C & n[1].st = E)
+invariant "c51_Crit1_1_Idle1"
+  !(n[1].data != auxDATA & n[1].st = E)
+invariant "coherence_Crit1_1_Idle1_1_Crit2"
+  !(n[1].st = E & x = true)
+invariant "coherence_Crit1_1_Idle1_1_Crit2_1_Idle2"
+  !(n[1].st = E & n[2].st = E)
+
+invariant "coherence_Crit1"
+  !(n[2].st = C & x = true)
+
+
+  
+invariant "coherence_Crit1"
+  !(n[2].st = C & x = true)
+invariant "c51_Crit1"
+  !(memDATA != auxDATA & x = true)
+invariant "c51_Store1"
+  !(n[2].st = C & n[1].st = C)
+invariant "coherence_Crit1_1_Idle1"
+  !(n[2].st = C & n[1].st = E)
+invariant "c51_Crit1_1_Idle1"
+  !(n[1].data != auxDATA & n[1].st = E)
+invariant "coherence_Crit1_1_Idle1_1_Crit2"
+  !(n[1].st = E & x = true)
+invariant "coherence_Crit1_1_Idle1_1_Crit2_1_Idle2"
+  !(n[1].st = E & n[2].st = E)
+
+
+
+
+
+
+invariant "coherence_Crit1"
+  !(n[2].st = C & x = true)
+invariant "c51_Crit1"
+  !(memDATA != auxDATA & x = true)
+invariant "c51_Store1"
+  !(n[2].st = C & n[1].st = C)
+invariant "coherence_Crit1_1_Idle1"
+  !(n[2].st = C & n[1].st = E)
+invariant "c51_Crit1_1_Idle1"
+  !(n[1].data != auxDATA & n[1].st = E)
+invariant "coherence_Crit1_1_Idle1_1_Crit2"
+  !(n[1].st = E & x = true)
+invariant "coherence_Crit1_1_Idle1_1_Crit2_1_Idle2"
+  !(n[1].st = E & n[2].st = E)
+
+
+
+
+
+
+
+invariant "coherence_Crit1"
+  !(n[2].st = C & x = true)
+invariant "c51_Crit1"
+  !(memDATA != auxDATA & x = true)
+invariant "c51_Store1"
+  !(n[2].st = C & n[1].st = C)
+invariant "coherence_Crit1_1_Idle1"
+  !(n[2].st = C & n[1].st = E)
+invariant "c51_Crit1_1_Idle1"
+  !(n[1].data != auxDATA & n[1].st = E)
+invariant "coherence_Crit1_1_Idle1_1_Crit2"
+  !(n[1].st = E & x = true)
+invariant "coherence_Crit1_1_Idle1_1_Crit2_1_Idle2"
+  !(n[1].st = E & n[2].st = E)

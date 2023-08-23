@@ -1,0 +1,6 @@
+invariant 'deadlock_Try1'
+  !(x = false & n[2] = T & n[1] = I)
+invariant 'deadlock_Try2'
+  !(x = false & n[1] = T & n[2] = I)
+invariant 'deadlock_Try1_Try2'
+  !(n[1] = I & x = false & n[2] = I)

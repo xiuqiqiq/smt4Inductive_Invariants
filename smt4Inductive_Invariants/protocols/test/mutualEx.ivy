@@ -1,0 +1,64 @@
+#lang ivy1.7
+
+type node
+
+type node_state = {i, t, c, e}
+
+individual state(N:node) : node_state
+
+individual x_resource : bool
+
+after init{
+    state(X) := i;
+    x_resource := true;
+}
+
+
+action try = {
+    local n:node {
+        assume state(n) = i;
+        state(n) := t;
+    }
+}
+
+action crit = {
+    local n:node {
+        assume state(n) = t & x_resource = true;
+        state(n) := c;
+        x_resource := false;
+    } 
+}
+
+action exit = {
+    local n:node {
+        assume state(n) = c;
+        state(n) := e;
+    } 
+}
+
+action idle = {
+    local n:node {
+        assume state(n) = e;
+        state(n) := i;
+        x_resource := true;
+    } 
+}
+
+export try
+export crit
+export exit
+export idle
+
+# the safety property : at most one node at state C
+conjecture X~=Y -> (state(X) = c -> state(Y) ~= c)
+# 保证每次最多仅有一个结点可以在临界区进行操作。
+
+# conjectures from CTIs
+conjecture ~(state(X) = c & x_resource)
+# 保证当有节点的状态为c时，系统资源x_resource不可访问
+conjecture ~(state(X) = c & state(Y) = e)
+# 保证当有节点的状态为c时，肯定不同时存在一个状态为e的节点
+conjecture ~(state(N) = e & x_resource)
+# 保证当有节点的状态为e时，系统资源x_resoure不能被访问
+conjecture ~(N ~= P & state(N) = e & state(P) = e)
+# 保证系统中不可能同时存在两个状态为e的节点

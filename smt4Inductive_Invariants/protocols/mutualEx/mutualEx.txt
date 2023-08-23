@@ -1,0 +1,68 @@
+MurphiProtocol(
+(MurphiConst(NODENUMS, 2),),
+(MurphiTypeDecl('state', EnumType('I', 'T', 'C', 'E')),
+ MurphiTypeDecl('NODE', ScalarSetType(NODENUMS))),
+
+(MurphiVarDecl('n', ArrayType(VarType(NODE), VarType(state))),
+ MurphiVarDecl('x', BooleanType())),
+
+ StartState('Init',
+            [ForallCmd(MurphiVarDecl('i', VarType(NODE)),
+            [AssignCmd(ArrayIndex(VarExpr('n'), VarExpr('i')), EnumValExpr(EnumType('I', 'T', 'C', 'E'), 'I'))]),
+            AssignCmd(VarExpr('x'), BooleanExpr(True))]),
+
+ [MurphiRuleSet((MurphiVarDecl('i', VarType(NODE)),),
+                 MurphiRule('Try', OpExpr(=, n[i], I),
+                 [AssignCmd(ArrayIndex(VarExpr('n'), VarExpr('i')), EnumValExpr(EnumType('I', 'T', 'C', 'E'), 'T'))])),
+
+                 MurphiRuleSet((MurphiVarDecl('i', VarType(NODE)),),
+                 MurphiRule('Crit', OpExpr(&, n[i] = T, x = true),
+                 [AssignCmd(ArrayIndex(VarExpr('n'), VarExpr('i')), EnumValExpr(EnumType('I', 'T', 'C', 'E'), 'C')), AssignCmd(VarExpr('x'), BooleanExpr(False))])),
+
+                 MurphiRuleSet((MurphiVarDecl('i', VarType(NODE)),),
+                 MurphiRule('Exit', OpExpr(=, n[i], C),
+                 [AssignCmd(ArrayIndex(VarExpr('n'), VarExpr('i')), EnumValExpr(EnumType('I', 'T', 'C', 'E'), 'E'))])),
+
+                 MurphiRuleSet((MurphiVarDecl('i', VarType(NODE)),),
+                 MurphiRule('Idle', OpExpr(=, n[i], E), [AssignCmd(ArrayIndex(VarExpr('n'), VarExpr('i')), EnumValExpr(EnumType('I', 'T', 'C', 'E'), 'I')), AssignCmd(VarExpr('x'), BooleanExpr(True))])),
+
+                 Invariant('mutualEx',
+                            ForallExpr(MurphiVarDecl('i', VarType(NODE)), ForallExpr(MurphiVarDecl('j', VarType(NODE)),
+                            OpExpr(->, i != j, n[i] = C ->n[j] != C))))
+]
+
+  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
